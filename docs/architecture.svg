@@ -1,0 +1,140 @@
+<svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8A8071"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3F6B4A"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1440" height="900" fill="#FAF7F0"/>
+
+  <!-- Title -->
+  <text x="720" y="38" text-anchor="middle" font-family="Georgia, serif" font-weight="700" font-size="26" fill="#2B2620">Esstisch Demo — how it all fits together</text>
+  <text x="720" y="60" text-anchor="middle" font-size="13" font-style="italic" fill="#8A8071">Two loops: building the app (top path) and using the app every day (bottom path)</text>
+
+  <!-- ================= DEVELOPER LAPTOP ================= -->
+  <rect x="40" y="90" width="280" height="350" rx="18" fill="#FFFFFF" stroke="#5C7A99" stroke-width="2"/>
+  <text x="64" y="120" font-family="Georgia, serif" font-weight="700" font-size="16" fill="#5C7A99">Developer laptop</text>
+  <line x1="64" y1="134" x2="296" y2="134" stroke="#5C7A99" stroke-opacity="0.3"/>
+
+  <rect x="64" y="150" width="232" height="56" rx="10" fill="#FAF7F0" stroke="#E8E1D4"/>
+  <text x="80" y="172" font-weight="700" font-size="13.5" fill="#2B2620">Editor</text>
+  <text x="80" y="190" font-size="10.5" fill="#8A8071">edit App.jsx</text>
+
+  <rect x="64" y="218" width="232" height="56" rx="10" fill="#FAF7F0" stroke="#E8E1D4"/>
+  <text x="80" y="240" font-weight="700" font-size="13.5" fill="#2B2620">Vite dev server</text>
+  <text x="80" y="258" font-size="10.5" fill="#8A8071">npm run dev — local testing</text>
+
+  <rect x="64" y="286" width="232" height="56" rx="10" fill="#FAF7F0" stroke="#E8E1D4"/>
+  <text x="80" y="308" font-weight="700" font-size="13.5" fill="#2B2620">Git</text>
+  <text x="80" y="326" font-size="10.5" fill="#8A8071">add · commit · push</text>
+
+  <path d="M180,206 L180,218" stroke="#8A8071" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M180,274 L180,286" stroke="#8A8071" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ================= GITHUB ================= -->
+  <rect x="380" y="198" width="220" height="132" rx="18" fill="#FFFFFF" stroke="#8C6BAA" stroke-width="2"/>
+  <text x="404" y="228" font-family="Georgia, serif" font-weight="700" font-size="16" fill="#8C6BAA">GitHub</text>
+  <line x1="404" y1="242" x2="576" y2="242" stroke="#8C6BAA" stroke-opacity="0.3"/>
+  <rect x="404" y="254" width="172" height="60" rx="10" fill="#FAF7F0" stroke="#E8E1D4"/>
+  <text x="418" y="277" font-weight="700" font-size="13" fill="#2B2620">esstisch-demo repo</text>
+  <text x="418" y="295" font-size="10.5" fill="#8A8071">public, full history</text>
+
+  <!-- ================= NETLIFY ================= -->
+  <rect x="660" y="90" width="280" height="350" rx="18" fill="#FFFFFF" stroke="#C08A2E" stroke-width="2"/>
+  <text x="684" y="120" font-family="Georgia, serif" font-weight="700" font-size="16" fill="#C08A2E">Netlify</text>
+  <line x1="684" y1="134" x2="916" y2="134" stroke="#C08A2E" stroke-opacity="0.3"/>
+
+  <rect x="684" y="170" width="232" height="70" rx="10" fill="#FAF7F0" stroke="#E8E1D4"/>
+  <text x="700" y="200" font-weight="700" font-size="13.5" fill="#2B2620">Build</text>
+  <text x="700" y="218" font-size="10.5" fill="#8A8071">npm run build</text>
+
+  <rect x="684" y="260" width="232" height="90" rx="10" fill="#FAF7F0" stroke="#E8E1D4"/>
+  <text x="700" y="292" font-weight="700" font-size="13.5" fill="#2B2620">Live site</text>
+  <text x="700" y="310" font-size="10.5" fill="#8A8071">esstisch-demo.netlify.app</text>
+  <text x="700" y="326" font-size="10.5" fill="#8A8071">public URL, any network</text>
+
+  <path d="M800,240 L800,260" stroke="#8A8071" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Git -> GitHub -->
+  <path d="M296,314 L378,284" stroke="#8A8071" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <text x="322" y="290" font-size="11" fill="#5C5648" font-style="italic">push</text>
+
+  <!-- GitHub -> Netlify Build -->
+  <path d="M578,270 L682,215" stroke="#8A8071" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <text x="600" y="228" font-size="11" fill="#5C5648" font-style="italic">auto-deploys</text>
+
+  <!-- ================= VISITOR DEVICES ================= -->
+  <rect x="1000" y="90" width="360" height="600" rx="18" fill="#FFFFFF" stroke="#B23A2E" stroke-width="2"/>
+  <text x="1024" y="120" font-family="Georgia, serif" font-weight="700" font-size="16" fill="#B23A2E">Visitor devices</text>
+  <line x1="1024" y1="134" x2="1336" y2="134" stroke="#B23A2E" stroke-opacity="0.3"/>
+
+  <rect x="1024" y="160" width="312" height="80" rx="10" fill="#FAF7F0" stroke="#E8E1D4"/>
+  <text x="1040" y="192" font-weight="700" font-size="13.5" fill="#2B2620">Browser tab A</text>
+  <text x="1040" y="210" font-size="10.5" fill="#8A8071">any device, any network</text>
+
+  <rect x="1024" y="270" width="312" height="80" rx="10" fill="#FAF7F0" stroke="#E8E1D4"/>
+  <text x="1040" y="302" font-weight="700" font-size="13.5" fill="#2B2620">Browser tab B</text>
+  <text x="1040" y="320" font-size="10.5" fill="#8A8071">a second visitor, or you testing</text>
+
+  <rect x="1024" y="380" width="312" height="190" rx="10" fill="#FAF7F0" stroke="#E8E1D4" stroke-dasharray="4,3"/>
+  <text x="1040" y="408" font-weight="700" font-size="12.5" fill="#2B2620">No installs, no accounts</text>
+  <text x="1040" y="430" font-size="10.5" fill="#8A8071">Every visitor opens the same public</text>
+  <text x="1040" y="448" font-size="10.5" fill="#8A8071">link and picks a demo identity. Open</text>
+  <text x="1040" y="466" font-size="10.5" fill="#8A8071">it in two tabs and a change in one</text>
+  <text x="1040" y="484" font-size="10.5" fill="#8A8071">shows up in the other within a second,</text>
+  <text x="1040" y="502" font-size="10.5" fill="#8A8071">the same realtime sync the real app</text>
+  <text x="1040" y="520" font-size="10.5" fill="#8A8071">uses across actual family phones.</text>
+
+  <text x="1024" y="600" font-size="11" fill="#8A8071" font-style="italic">Any device opens the same link —</text>
+  <text x="1024" y="616" font-size="11" fill="#8A8071" font-style="italic">no separate installs needed</text>
+
+  <!-- Netlify Live -> Devices -->
+  <path d="M940,305 L998,300" stroke="#8A8071" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <text x="946" y="292" font-size="11" fill="#5C5648" font-style="italic">opens app</text>
+
+  <!-- ================= LEGEND ================= -->
+  <rect x="40" y="520" width="300" height="270" rx="18" fill="#FFFFFF" stroke="#C7BFAE" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <text x="64" y="552" font-family="Georgia, serif" font-weight="700" font-size="15" fill="#5C5648">How to read this</text>
+  <line x1="64" y1="566" x2="316" y2="566" stroke="#C7BFAE"/>
+  <text x="64" y="592" font-size="12" fill="#5C5648">Solid arrows: the deploy pipeline —</text>
+  <text x="64" y="610" font-size="12" fill="#5C5648">your code becoming the live app.</text>
+  <text x="64" y="638" font-size="12" fill="#5C5648">Dashed arrows: Supabase pushing live</text>
+  <text x="64" y="656" font-size="12" fill="#5C5648">updates to every device, no refresh.</text>
+  <text x="64" y="684" font-size="12" fill="#5C5648">Meals &amp; ingredients are read-only for</text>
+  <text x="64" y="702" font-size="12" fill="#5C5648">visitors here. Everything else resets</text>
+  <text x="64" y="720" font-size="12" fill="#5C5648">daily via a scheduled job — see</text>
+  <text x="64" y="738" font-size="12" fill="#5C5648">GOVERNANCE.md.</text>
+
+  <!-- ================= SUPABASE ================= -->
+  <rect x="380" y="520" width="500" height="270" rx="18" fill="#FFFFFF" stroke="#3F6B4A" stroke-width="2"/>
+  <text x="404" y="550" font-family="Georgia, serif" font-weight="700" font-size="16" fill="#3F6B4A">Supabase</text>
+  <line x1="404" y1="564" x2="856" y2="564" stroke="#3F6B4A" stroke-opacity="0.3"/>
+
+  <rect x="404" y="590" width="260" height="100" rx="10" fill="#FAF7F0" stroke="#E8E1D4"/>
+  <text x="420" y="612" font-weight="700" font-size="12.5" fill="#2B2620">Postgres database</text>
+  <text x="420" y="630" font-size="10" fill="#8A8071">read-only: meals · ingredients ·</text>
+  <text x="420" y="644" font-size="10" fill="#8A8071">people · settings</text>
+  <text x="420" y="662" font-size="10" fill="#8A8071">read-write: plans · checks · locks</text>
+
+  <rect x="700" y="620" width="150" height="56" rx="10" fill="#FAF7F0" stroke="#3F6B4A" stroke-dasharray="4,3"/>
+  <text x="716" y="644" font-weight="700" font-size="12.5" fill="#2B2620">Realtime sync</text>
+  <text x="716" y="660" font-size="10" fill="#8A8071">pushes live updates</text>
+
+  <path d="M664,655 L698,655" stroke="#8A8071" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- Devices <-> Postgres (bidirectional, routed above Realtime to avoid crossing it) -->
+  <path d="M1000,590 L700,590 L662,610" stroke="#8A8071" stroke-width="2" fill="none" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="850" y="578" text-anchor="middle" font-size="11" fill="#5C5648" font-style="italic">reads &amp; writes data</text>
+
+  <!-- Realtime -> Devices (dashed) -->
+  <path d="M852,636 L998,640" stroke="#3F6B4A" stroke-width="2" stroke-dasharray="6,4" fill="none" marker-end="url(#arrowGreen)"/>
+  <text x="900" y="700" text-anchor="middle" font-size="11" fill="#3F6B4A" font-style="italic">live updates,</text>
+  <text x="900" y="716" text-anchor="middle" font-size="11" fill="#3F6B4A" font-style="italic">no refresh</text>
+
+  <!-- Footer -->
+  <text x="720" y="830" text-anchor="middle" font-size="12.5" fill="#5C5648">Top path: how the <tspan font-weight="700">app itself</tspan> changes — new features, fixes, deploys.</text>
+  <text x="720" y="852" text-anchor="middle" font-size="12.5" fill="#5C5648">Bottom path: how <tspan font-weight="700">data</tspan> flows every day — planning, shopping, marking meals cooked.</text>
+</svg>
