@@ -56,3 +56,5 @@ The database schema, seed data, and RLS policies are in [sql/setup.sql](sql/setu
 ## More detail
 
 [GOVERNANCE.md](GOVERNANCE.md) covers access control design, the RBAC model, two real incidents from building the original app, data minimization, and this project's honest limitations.
+
+Deploying your own copy of this demo (new Supabase project, GitHub repo, Netlify site)? See [SETUP.md](SETUP.md) for exact steps.
