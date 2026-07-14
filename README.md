@@ -4,7 +4,7 @@ A family meal-planning app: a meal library with real recipes, a weekly planner, 
 
 **This is a sanitized public version of a real app I built for my own family.** Esstisch has been in daily use by two adults and two kids for months. The recipes, ingredient data, and Swiss grocery costs in this demo are the real ones from that app. What's different here is everyone's identity: real names are replaced with four generic demo logins, and the database access rules are tightened for a public URL instead of a private family one (see [GOVERNANCE.md](GOVERNANCE.md) for exactly what changed and why).
 
-**Live demo:** _add the Netlify URL here once deployed_
+**Live demo:** https://esstisch-demo.netlify.app/
 
 ## Try it
 
