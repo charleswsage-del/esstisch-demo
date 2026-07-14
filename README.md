@@ -28,6 +28,27 @@ A few things worth trying:
 
 The demo resets to a clean, populated baseline once a day, so nothing you do here is permanent, and you'll never land on an empty app.
 
+## Screenshots
+
+<table>
+<tr>
+<td><img src="docs/Screenshots/login.png" width="300" alt="Login screen"><br>Login</td>
+<td><img src="docs/Screenshots/library.png" width="300" alt="Meal library"><br>Meal library</td>
+</tr>
+<tr>
+<td><img src="docs/Screenshots/meal_detail.png" width="300" alt="Meal detail with ingredients and recipe steps"><br>Meal detail</td>
+<td><img src="docs/Screenshots/planner.png" width="300" alt="Weekly planner"><br>Weekly planner</td>
+</tr>
+<tr>
+<td><img src="docs/Screenshots/shopping_list.png" width="300" alt="Shopping list with hide-checked toggle on"><br>Shopping list</td>
+<td><img src="docs/Screenshots/report.png" width="300" alt="Report tab with cost trend and top meals"><br>Report tab</td>
+</tr>
+<tr>
+<td><img src="docs/Screenshots/locked_parent.png" width="300" alt="Locked week, parent view"><br>Locked week, parent view</td>
+<td><img src="docs/Screenshots/locked_kid.png" width="300" alt="Locked week, kid view with restricted actions"><br>Locked week, kid view</td>
+</tr>
+</table>
+
 ## Tech stack
 
 - **React + Vite + Tailwind CSS v4** for the frontend
