@@ -1,12 +1,12 @@
 # Setting up the live demo
 
-The code, database schema, and docs are done and committed locally. Everything below is stuff only you can do, since it all means clicking around in dashboards I don't have access to. Follow these in order.
+This walks through getting a live copy of Esstisch Demo running: a new Supabase project, a new GitHub repo, and a new Netlify site. Follow these in order.
 
 ## 1. Create the new Supabase project
 
 1. Go to [supabase.com/dashboard](https://supabase.com/dashboard) and click **New project**.
 2. Name it something like `esstisch-demo`.
-3. Region: **Europe (Frankfurt)** (`eu-central-1`), per what we agreed.
+3. Region: **Europe (Frankfurt)** (`eu-central-1`).
 4. Pick a database password and save it somewhere (a password manager, not a chat). You won't need it day-to-day since the app connects with the anon key, but Supabase asks for one.
 5. Wait for the project to finish provisioning (a minute or two).
 

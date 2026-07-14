@@ -6,7 +6,7 @@
   </defs>
 
   <rect x="0" y="0" width="1500" height="1050" fill="#FAF7F0"/>
-  <text x="750" y="36" text-anchor="middle" font-family="Georgia, serif" font-weight="700" font-size="26" fill="#2B2620">Esstisch Demo — database schema</text>
+  <text x="750" y="36" text-anchor="middle" font-family="Georgia, serif" font-weight="700" font-size="26" fill="#2B2620">Esstisch Demo: database schema</text>
   <text x="750" y="58" text-anchor="middle" font-size="13" font-style="italic" fill="#8A8071">10 tables in Supabase (Postgres). Lines show one-to-many relationships (hub table → many rows).</text>
 
   <!-- ============ helper-style table cards, hand-drawn ============ -->

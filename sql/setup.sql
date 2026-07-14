@@ -79,7 +79,7 @@ create table shopping_checked (
 );
 
 -- Favourites: who likes what. A foreign key into people rather than a
--- hardcoded name list — the real app used a check constraint listing
+-- hardcoded name list. The real app used a check constraint listing
 -- capitalized names, which drifted out of sync with the people table's
 -- lowercase ids and silently rejected every favourite (see GOVERNANCE.md).
 create table favourites (
@@ -158,7 +158,7 @@ alter publication supabase_realtime add table week_locks;
 alter publication supabase_realtime add table shopping_locks;
 
 -- ---------- seed: meals ----------
--- Real recipe/ingredient data from the original app — not personally
+-- Real recipe/ingredient data from the original app, not personally
 -- identifying, kept as-is because it's the substance worth showing off.
 
 INSERT INTO meals (id, name, cuisine, complexity, prep_time, cook_time, est_cost, health_rating, leftover_friendly, notes) VALUES ('carbonara-pasta', 'Carbonara pasta', 'Italian', 2, 10, 15, 12.1, 5, 'Yes', 'Quick and easy; add veg like broccoli to improve balance');
@@ -451,7 +451,7 @@ INSERT INTO ingredients (meal_id, category, name, quantity, unit, est_cost, note
 -- Four generic demo identities, matching the real app's two-parent/two-kid
 -- shape so favourites-by-person, ratings, and the parent/kid RBAC all have
 -- something real to demonstrate. Passwords are set separately via
--- VITE_APP_USERS (see .env.example) — these ids just need to match exactly.
+-- VITE_APP_USERS (see .env.example); these ids just need to match exactly.
 
 INSERT INTO people (id, name, initials, color, role) VALUES
   ('person1', 'Person One', 'P1', '#3F6B4A', 'parent'),
@@ -462,7 +462,7 @@ INSERT INTO people (id, name, initials, color, role) VALUES
 INSERT INTO settings (id, family_size, language) VALUES (1, 4, 'en');
 
 -- ---------- daily reset ----------
--- Restores the interactive tables to a realistic, populated baseline —
+-- Restores the interactive tables to a realistic, populated baseline,
 -- computed relative to CURRENT_DATE so the demo always shows "this week"
 -- and "last week", never a stale hardcoded date. Safe to re-run manually
 -- at any time from the SQL Editor.
@@ -536,10 +536,10 @@ $$;
 select reset_demo_data();
 
 -- ============================================
--- pg_cron scheduling — run this block AFTER enabling the pg_cron
+-- pg_cron scheduling. Run this block AFTER enabling the pg_cron
 -- extension (Database -> Extensions -> pg_cron, in the Supabase
 -- dashboard; this can't be done from SQL). If you run it before
--- enabling the extension it will error — just re-run this block
+-- enabling the extension it will error; just re-run this block
 -- once pg_cron is on. Re-runnable any time.
 -- ============================================
 

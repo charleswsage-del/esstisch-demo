@@ -163,7 +163,7 @@ function removeRow(rows, row, idField = "id") {
 
 // Offline support: mirror the last successful fetch into localStorage so the
 // app (and specifically the shopping list) still shows real data with zero
-// signal — e.g. standing in a supermarket aisle. This is deliberately a full
+// signal, e.g. standing in a supermarket aisle. This is deliberately a full
 // snapshot in one key, not per-table caching, to keep this simple.
 const OFFLINE_CACHE_KEY = "esstisch-offline-cache";
 function saveOfflineCache(data) {
@@ -275,7 +275,7 @@ export default function App() {
         });
       } catch (err) {
         if (active && !cache) setLoadError(err.message || String(err));
-        // if we already showed cached data above, just keep showing it —
+        // if we already showed cached data above, just keep showing it,
         // no network right now, but that's exactly the offline case this exists for
       } finally {
         if (active) setLoading(false);
@@ -336,7 +336,7 @@ export default function App() {
 
   // A login username that doesn't exactly match a real people.id (typo, wrong
   // case in VITE_APP_USERS, etc.) would otherwise fail every write that tags
-  // "who did this" — silently, since foreign keys reject it with no visible
+  // "who did this", silently, since foreign keys reject it with no visible
   // error. Catch that mismatch as soon as the real list loads and clear it,
   // so the person gets prompted to pick a real identity instead.
   useEffect(() => {
@@ -559,7 +559,7 @@ export default function App() {
   const toggleChecked = useCallback(async (itemKey) => {
     if (shoppingKidBlocked) return;
     const current = checkedMap[itemKey] || false;
-    // update locally first so this responds instantly even with no signal —
+    // update locally first so this responds instantly even with no signal,
     // syncs to Supabase in the background when a connection is available
     const optimisticRow = { id: `local-${weekKey}-${itemKey}`, week_start: weekKey, item_key: itemKey, checked: !current };
     setAllChecked((rows) => upsertRow(rows, optimisticRow));
@@ -697,7 +697,7 @@ export default function App() {
             <ChefHat size={22} style={{ color: "#3F6B4A" }} />
             <h1 className="font-serif text-xl font-semibold tracking-tight">Esstisch</h1>
             {isOffline && (
-              <span className="flex items-center gap-1 text-[10px] font-semibold px-2 py-0.5 rounded-full" style={{ backgroundColor: "#F5E7E4", color: "#B23A2E" }} title="No connection — showing the last saved data">
+              <span className="flex items-center gap-1 text-[10px] font-semibold px-2 py-0.5 rounded-full" style={{ backgroundColor: "#F5E7E4", color: "#B23A2E" }} title="No connection, showing the last saved data">
                 <WifiOff size={10} /> offline
               </span>
             )}
@@ -807,7 +807,7 @@ function PasswordGate({ onUnlock }) {
           <ChefHat size={22} style={{ color: "#3F6B4A" }} />
           <h1 className="font-serif text-xl font-semibold">Esstisch</h1>
         </div>
-        <p className="text-sm mb-4" style={{ color: "#8A8071" }}>Family only — sign in to continue.</p>
+        <p className="text-sm mb-4" style={{ color: "#8A8071" }}>Family only, sign in to continue.</p>
         <form onSubmit={handleSubmit}>
           <input
             type="text" autoFocus value={username} autoCapitalize="none"
@@ -823,7 +823,7 @@ function PasswordGate({ onUnlock }) {
             className="w-full px-3 py-2.5 rounded-xl text-sm outline-none mb-2"
             style={{ backgroundColor: "#FAF7F0", border: error ? "1px solid #B23A2E" : "1px solid #E8E1D4" }}
           />
-          {error && <p className="text-xs mb-3" style={{ color: "#B23A2E" }}>That's not it — try again.</p>}
+          {error && <p className="text-xs mb-3" style={{ color: "#B23A2E" }}>That's not it, try again.</p>}
           <button type="submit" className="w-full py-2.5 rounded-xl text-sm font-semibold mt-2" style={{ backgroundColor: "#3F6B4A", color: "#fff" }}>
             Enter
           </button>
@@ -893,7 +893,7 @@ function IdentityPicker({ people, current, onPick, onClose }) {
                 className="w-full px-3 py-2.5 rounded-xl text-sm outline-none mb-2"
                 style={{ backgroundColor: "#FFFFFF", border: error ? "1px solid #B23A2E" : "1px solid #E8E1D4" }}
               />
-              {error && <p className="text-xs mb-3" style={{ color: "#B23A2E" }}>That's not it — try again.</p>}
+              {error && <p className="text-xs mb-3" style={{ color: "#B23A2E" }}>That's not it, try again.</p>}
               <button type="submit" className="w-full py-2.5 rounded-xl text-sm font-semibold mt-2" style={{ backgroundColor: "#3F6B4A", color: "#fff" }}>Switch</button>
             </form>
           </>
@@ -1057,7 +1057,7 @@ function PlanView({ weekMonday, setWeekMonday, plannedMeals, weekCost, cookedCou
         <div className="flex items-center gap-2 mb-3 px-3 py-2.5 rounded-xl" style={{ backgroundColor: "#F5E7E4" }}>
           <Lock size={14} color="#B23A2E" className="shrink-0" />
           <p className="text-xs" style={{ color: "#B23A2E" }}>
-            {isKid ? "This week is locked — you can still mark meals cooked, just can't change the plan. Ask a parent to unlock it." : "This week is locked — tap the lock icon above to make changes."}
+            {isKid ? "This week is locked. You can still mark meals cooked, just can't change the plan. Ask a parent to unlock it." : "This week is locked. Tap the lock icon above to make changes."}
           </p>
         </div>
       )}
@@ -1363,10 +1363,10 @@ function MealFormSheet({ cuisines, existingMeal, ingredientReference, ingredient
         ingredients: ingredients.filter((ing) => ing.name.trim().length > 0),
       });
     } catch (err) {
-      // the demo's meal library is intentionally read-only for anon visitors (see GOVERNANCE.md) —
+      // the demo's meal library is intentionally read-only for anon visitors (see GOVERNANCE.md),
       // surface that as a clear explanation rather than the raw Postgres RLS error text
       const isReadOnly = /row-level security/i.test(err.message || "");
-      setError(isReadOnly ? "The meal library is read-only in this public demo — planning, favourites, and ratings are still fully interactive." : (err.message || "Couldn't save this meal — try again."));
+      setError(isReadOnly ? "The meal library is read-only in this public demo. Planning, favourites, and ratings are still fully interactive." : (err.message || "Couldn't save this meal, try again."));
       setSaving(false);
     }
   }
@@ -1477,7 +1477,7 @@ function buildPlainTextList(weekMonday, shoppingList, remainingOnly, checked) {
   const items = remainingOnly
     ? shoppingList.filter((item) => !checked[`${item.category}|${item.name}|${item.unit || ""}`])
     : shoppingList;
-  const lines = [`Shopping list — ${fmtWeekRange(weekMonday)}${remainingOnly ? " (remaining)" : ""}`, ""];
+  const lines = [`Shopping list: ${fmtWeekRange(weekMonday)}${remainingOnly ? " (remaining)" : ""}`, ""];
   let lastCategory = null;
   items.forEach((item) => {
     if (item.category !== lastCategory) {
