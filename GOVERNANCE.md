@@ -6,7 +6,7 @@ This document explains how Esstisch (and this public demo of it) handles access 
 
 The real Esstisch runs on a private Supabase project shared by my family. Its Row Level Security (RLS) policies grant full read and write access to anyone holding the project's public "anon" key: `for all using (true) with check (true)` on every table. That sounds permissive, and it is, but it's a reasonable choice for that context. The anon key is embedded in client-side JavaScript no matter how strict the policies behind it are, so it's never actually secret. The real protection is that the app's URL isn't published anywhere; only my family knows it exists. Given a small, trusted user base and a private URL, tightening RLS further wouldn't have bought much and would have added real complexity (per-user auth, row ownership, session management) for a family meal planner.
 
-This demo is different because it's linked from a resume and a LinkedIn post, which means the URL is public and the visitors are anonymous strangers, not four people I know. The same "grant everything to anon" policy that's fine for a private family tool would let any visitor delete meals, spam the planner, or leave something inappropriate in the shopping list for the next person (a recruiter, say) to see. So this project splits its RLS by table role instead of using one blanket policy:
+This demo is different because the URL is shared publicly and the visitors are anonymous strangers, not four people I know. The same "grant everything to anon" policy that's fine for a private family tool would let any visitor delete meals, spam the planner, or leave something inappropriate in the shopping list for the next person (a recruiter, say) to see. So this project splits its RLS by table role instead of using one blanket policy:
 
 - **Reference tables** (`meals`, `ingredients`, `people`, `settings`) are read-only for the anon role. Nobody can add, edit, or delete a meal from the public demo.
 - **Interactive tables** (`weekly_plan_days`, `shopping_checked`, `favourites`, `meal_ratings`, `week_locks`, `shopping_locks`) stay fully read-write for anon, because trying the planner, the shopping list, favourites, and the lock feature is the whole point of a demo.
@@ -51,7 +51,7 @@ It does not collect or run:
 
 ## Data residency
 
-This demo's Supabase project is hosted in the EU (Frankfurt) region.
+This demo's Supabase project is hosted in the EU (Central) region.
 
 ## Honest limitations
 
