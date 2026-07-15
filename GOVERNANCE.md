@@ -11,7 +11,7 @@ This demo is different because it's linked from a resume and a LinkedIn post, wh
 - **Reference tables** (`meals`, `ingredients`, `people`, `settings`) are read-only for the anon role. Nobody can add, edit, or delete a meal from the public demo.
 - **Interactive tables** (`weekly_plan_days`, `shopping_checked`, `favourites`, `meal_ratings`, `week_locks`, `shopping_locks`) stay fully read-write for anon, because trying the planner, the shopping list, favourites, and the lock feature is the whole point of a demo.
 
-That split alone isn't enough on its own, since a determined visitor could still fill the interactive tables with junk over time. So this project also runs a `pg_cron` job (`reset_demo_data()` in [sql/setup.sql](sql/setup.sql)) once a day that clears the interactive tables and reseeds a realistic baseline week. The exact schedule and the baseline data are documented in that file. The result: the meal library can't be vandalized at all, and anything else a visitor changes gets wiped and reset to a clean, populated state within 24 hours.
+That split alone isn't enough on its own, since a determined visitor could still fill the interactive tables with junk over time. So this project also runs a `pg_cron` job (`reset_demo_data()` in [sql/setup.sql](sql/setup.sql)) once a day that clears the interactive tables and reseeds a realistic baseline week. The exact schedule and the baseline data are documented in that file. The result: the meal library can't be vandalised at all, and anything else a visitor changes gets wiped and reset to a clean, populated state within 24 hours.
 
 ## Role-based access control
 
@@ -25,7 +25,7 @@ The checks live in the UI (`isKid` gates in `App.jsx`) rather than in RLS, which
 
 ## Incident 1: the favourites bug
 
-The real app's `favourites` table originally had a check constraint listing valid people by capitalized first name. Later, when I added a proper `people` table (for colors, initials, and eventually roles), I gave each person a lowercase id. The check constraint never got updated to match. Every favourite anyone tried to save after that point was silently rejected by Postgres. Nothing crashed and no error surfaced in the UI. I found it by accident, checking the browser console after a favourite tap didn't seem to do anything, and saw a Postgres constraint violation staring back at me.
+The real app's `favourites` table originally had a check constraint listing valid people by capitalised first name. Later, when I added a proper `people` table (for colours, initials, and eventually roles), I gave each person a lowercase id. The check constraint never got updated to match. Every favourite anyone tried to save after that point was silently rejected by Postgres. Nothing crashed and no error surfaced in the UI. I found it by accident, checking the browser console after a favourite tap didn't seem to do anything, and saw a Postgres constraint violation staring back at me.
 
 The fix in the real app was a migration to correct the constraint's casing. For this demo, I went further: `favourites.person` is now a foreign key into `people(id)` instead of a hardcoded list at all (see the schema in [sql/setup.sql](sql/setup.sql)). A foreign key can't drift out of sync with the table it's supposed to reference the way a hardcoded check constraint can. That's the actual lesson from this bug: the fix isn't just correcting the values, it's removing the class of bug entirely.
 
@@ -35,7 +35,7 @@ Early on, I put a Netlify Basic-Auth gate in front of the real app (`public/_hea
 
 This demo doesn't carry that file over at all. Its login list is generated fresh, lives only in environment variables (`.env` locally, Netlify's dashboard in production), and is documented in [.env.example](.env.example) as placeholders, never real values.
 
-## Data minimization
+## Data minimisation
 
 This app, in both its real and demo forms, collects:
 

@@ -2,7 +2,7 @@
 
 A family meal-planning app: a meal library with real recipes, a weekly planner, an auto-generated shopping list, cooking history, ratings, and a stats dashboard.
 
-**This is a sanitized public version of a real app I built for my own family.** Esstisch has been in daily use by two adults and two kids for months. The recipes, ingredient data, and Swiss grocery costs in this demo are the real ones from that app. What's different here is everyone's identity: real names are replaced with four generic demo logins, and the database access rules are tightened for a public URL instead of a private family one (see [GOVERNANCE.md](GOVERNANCE.md) for exactly what changed and why).
+**This is a sanitised public version of a real app I built for my own family.** Esstisch has been in daily use by two adults and two kids for months. The recipes, ingredient data, and Swiss grocery costs in this demo are the real ones from that app. What's different here is everyone's identity: real names are replaced with four generic demo logins, and the database access rules are tightened for a public URL instead of a private family one (see [GOVERNANCE.md](GOVERNANCE.md) for exactly what changed and why).
 
 **Live demo:** https://esstisch-demo.netlify.app/
 
@@ -80,6 +80,6 @@ The database schema, seed data, and RLS policies are in [sql/setup.sql](sql/setu
 
 ## More detail
 
-[GOVERNANCE.md](GOVERNANCE.md) covers access control design, the RBAC model, two real incidents from building the original app, data minimization, and this project's honest limitations.
+[GOVERNANCE.md](GOVERNANCE.md) covers access control design, the RBAC model, two real incidents from building the original app, data minimisation, and this project's honest limitations.
 
 Deploying your own copy of this demo (new Supabase project, GitHub repo, Netlify site)? See [SETUP.md](SETUP.md) for exact steps.

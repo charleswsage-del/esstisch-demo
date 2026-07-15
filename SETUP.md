@@ -61,7 +61,7 @@ Open `http://localhost:5173`, log in as `person1` / `demo1234`, and confirm the 
 ## 6. Create the GitHub repository
 
 1. Go to [github.com/new](https://github.com/new).
-2. Name it `esstisch-demo`, set it **Public**, don't initialize with a README (this repo already has one).
+2. Name it `esstisch-demo`, set it **Public**, don't initialise with a README (this repo already has one).
 3. Push the existing local repo:
    ```powershell
    cd C:\Users\charl\Scribli-Apps\esstisch-demo

@@ -10,7 +10,7 @@ const OVERDUE_MIN_DAYS = 56;
 const IDENTITY_KEY = "esstisch-identity";
 const UNLOCKED_KEY = "esstisch-unlocked";
 
-// Explicit per-cuisine colors (not a hash) so the same origin always gets the
+// Explicit per-cuisine colours (not a hash) so the same origin always gets the
 // same color and two different origins never collide on one swatch.
 const CUISINE_COLOR_MAP = {
   Italian: "#B23A2E", American: "#C08A2E", Chinese: "#D6455A", European: "#5C7A99",

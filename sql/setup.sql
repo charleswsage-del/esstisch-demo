@@ -80,7 +80,7 @@ create table shopping_checked (
 
 -- Favourites: who likes what. A foreign key into people rather than a
 -- hardcoded name list. The real app used a check constraint listing
--- capitalized names, which drifted out of sync with the people table's
+-- capitalised names, which drifted out of sync with the people table's
 -- lowercase ids and silently rejected every favourite (see GOVERNANCE.md).
 create table favourites (
   id bigint generated always as identity primary key,
@@ -117,7 +117,7 @@ create table shopping_locks (
 -- ---------- row level security ----------
 -- Reference/configuration tables: read-only for the anon role. A public
 -- demo means anonymous visitors, so nothing here should let a visitor
--- vandalize the meal library for the next person to load the page.
+-- vandalise the meal library for the next person to load the page.
 -- Interactive tables: full read-write for anon, since trying the
 -- planner/shopping-list/favourites/locking features is the whole point.
 -- See GOVERNANCE.md for the full reasoning and how this differs from
