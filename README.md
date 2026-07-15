@@ -64,6 +64,10 @@ The demo resets to a clean, populated baseline once a day, so nothing you do her
 - A deliberate, documented security decision for going from a private tool to a public one, including a scheduled reset job (`pg_cron`) rather than just hoping nobody misuses it
 - Two honestly-told incidents from building the real app (a data-integrity bug and a leaked credential), both in [GOVERNANCE.md](GOVERNANCE.md)
 
+## How this was built
+
+Built with [Claude Code](https://claude.com/claude-code) under my direction. The product and architecture calls, the data model, the RLS split for going public, the RBAC design, what to build versus leave out, were mine; Claude Code wrote the code, the SQL, and this documentation from there.
+
 ## Running it locally
 
 ```
