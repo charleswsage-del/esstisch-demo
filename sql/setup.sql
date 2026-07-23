@@ -533,6 +533,12 @@ begin
 end;
 $$;
 
+-- Postgres grants EXECUTE on new functions to PUBLIC by default. Without
+-- this, anyone holding the public anon key (everyone, by design) could
+-- call this function directly via /rest/v1/rpc/reset_demo_data instead
+-- of waiting for the scheduled job. Only pg_cron should ever run this.
+revoke execute on function reset_demo_data() from public, anon, authenticated;
+
 select reset_demo_data();
 
 -- ============================================
